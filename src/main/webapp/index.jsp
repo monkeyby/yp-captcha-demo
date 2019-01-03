@@ -27,7 +27,7 @@
         expired: 10,
         mode: 'dialog',
         container: document.getElementById('cbox'),
-        appId: '6a964d3946584546b46f7bf83a775904',
+        appId: 'YOUR_APPID',
         version: 'v1',
         onError: function (param) {
           if(param.code == 429) {
@@ -68,7 +68,7 @@
         }
         event.preventDefault();
         var data = {
-          username: $('#username').val(),
+          username: $('#username').val(),   
           password: $('#password').val(),
           token:reqdata.token,
           authenticate:reqdata.authenticate,
