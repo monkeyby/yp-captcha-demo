@@ -24,9 +24,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String token = request.getParameter(YPCaptchaVerifier.REQ_TOKEN); // 从请求体里获得验证码validate数据
         String authenticate = request.getParameter(YPCaptchaVerifier.REQ_VATHENTICATE); // 从请求体里获得验证码validate数据
-        String user = "{'id':'123456'}";
 
-        boolean isValid = verifier.verify(token, authenticate,user); // 发起二次校验
+        boolean isValid = verifier.verify(token, authenticate); // 发起二次校验
 
         System.out.println("token = " + token + " , authenticate = " + authenticate + ", isValid = " + isValid);
         

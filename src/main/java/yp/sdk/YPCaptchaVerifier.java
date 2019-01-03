@@ -44,16 +44,14 @@ public class YPCaptchaVerifier {
      * @return
      * @throws UnsupportedEncodingException 
      */
-    public boolean verify(String token,String authenticate , String user) throws UnsupportedEncodingException {
+    public boolean verify(String token,String authenticate) throws UnsupportedEncodingException {
         if (StringUtils.isEmpty(token) || StringUtils.equals(token, "null") || StringUtils.isEmpty(authenticate) || StringUtils.equals(authenticate, "null")) {
             return false;
         }
-        user = (user == null) ? "" : user; // bugfix:如果user为null会出现签名错误的问题
         Map<String, String> params = new HashMap<String, String>();
         params.put("captchaId", captchaId);
         params.put("token", token);
         params.put("authenticate", authenticate);
-//        params.put("user", user);
         // 公共参数
         params.put("secretId", secretPair.secretId);
         params.put("version", VERSION);
